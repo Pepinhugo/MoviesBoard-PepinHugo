@@ -1,0 +1,114 @@
+/*----------------------------------------*/
+/*CSS Général de l'application*/
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-image: url("./fondApp.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 1.2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*CCS de la Card*/
+ul{
+  margin-top: 10;
+  padding: 0;
+}
+
+/*CSS des éléments list dans la Card*/
+li{
+  background-color: #282c34;
+  opacity: 0.93;
+  margin-top: 1em;
+  list-style: none;
+  display: inline-block; 
+  width:50%;
+  border: solid white;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 20px;
+}
+
+/*Boutons de la Card*/
+button {
+  margin-bottom: 1em;
+  margin-right: 0.5em;
+}
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*CSS de la Navbar (barre de menu) de l'application*/
+.navigation{
+  margin: 0;
+  padding: 0;
+  background-color: #282c34;
+  box-shadow: 10px 5px 5px black;
+  opacity: 0.93;
+  width: 100%;
+  height:55px;
+  margin-bottom: 15px;
+}
+
+.navigation a{
+  text-decoration: none;
+  margin-right: 50px;
+  color: lightgray;
+}
+
+.navigation a:hover{
+  color:darkgray;
+  
+}
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*CSS du formulaire de la page Home*/
+.formHome{
+  background-color: #282c34;
+  box-shadow: 10px 5px 5px black;
+  opacity: 0.93;
+  border-radius: 50px;
+  width:35%;
+  margin-left: 33%;
+  
+}
+
+.formHome button{
+ margin-top: 12px;
+ margin-left: 10px;
+ border-radius: 20px;
+
+}
+/*----------------------------------------*/
+
+/*----------------------------------------*/
+/*CSS de la scrollbar de l'application*/
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#282c34, darkgray, #282c34);
+  box-shadow: 5px 10px 10px 5px black;
+  border-radius: 10px;
+}
+/*----------------------------------------*/
