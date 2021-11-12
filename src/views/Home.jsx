@@ -41,21 +41,13 @@ const Home = () => {
       newMovies.splice(index, 1);
       setMovies(newMovies);
      };
- 
-    /*Fonction d'ajout d'un nouveau film dans la base de donnéesgrace à un formulaire*/ 
-    const handleAdd = movieAdd =>{
 
-      const newMovieAdd = movies.slice();
-      
-      newMovieAdd.push(movieAdd);
-      setMovies(newMovieAdd);
-    }
 
     /*Ce que retourne la fonction en HTML */
     return (
         <div className="Card">
 
-          <Form onMovieAdd={handleAdd}/>
+          <Form/>
 
            <ul>
                 {movies.map((movie)=> (
