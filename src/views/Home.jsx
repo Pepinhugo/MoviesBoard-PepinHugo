@@ -31,17 +31,24 @@ const Home = () => {
       });
     }, []); 
 
-    /*Fonction de suppression d'un film (Card) */
+    /*Fonction de suppression d'un film (Card)*/
      const handleDelete = (id) =>{
+
+      /*Alerte de confirmation avant la supression du film (Card)*/
+      alert("Etes-vous sur de vouloir supprimer ?");
+
       const newMovies = movies.slice();
+
       const index = newMovies.findIndex((movie) => {
+
         return movie.id === id;  
       });
    
       newMovies.splice(index, 1);
       setMovies(newMovies);
      };
-
+ 
+  
 
     /*Ce que retourne la fonction en HTML */
     return (
@@ -58,7 +65,7 @@ const Home = () => {
 
                       <br/>
 
-                      <Link exact to ="DetailsMovies"><img src={movie.poster} alt="img du film"/></Link> 
+                      <Link exact to ={"DetailsMovies/"+ movie.id}><img src={movie.poster} alt="img du film"/></Link> 
 
                       <br/>
 
