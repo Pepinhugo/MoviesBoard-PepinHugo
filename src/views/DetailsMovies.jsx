@@ -9,53 +9,66 @@ import { useParams } from 'react-router';
 import axios from "axios";
 
 /*Fonction qui permet de récupérer et afficher toutes les datas d'une {id} dans une base de données à partir d'une api, grace à axios et à une prop*/ 
-const DetailsMovies = ({id}) => {
+const DetailsMovies = () => {
 
 
-    const [movieId, setMovies] = useState([]);
-    id = useParams().id;
+    const [movieId, setMovies] = useState(null);
+    const { id } = useParams();
 
-    useEffect(() => {
+    useEffect(() => { 
+    const movieRes = () => {
     axios
       .get(
-        `http://localhost:3000/movies/`
+        `http://localhost:3000/movies/${id}`
       )
       .then((listData) => {
+
         setMovies(listData.data);
-        console.log(listData.data);
 
       });
+    };
+    movieRes();
     }, [id]); 
-
+    console.log(id);
 
     /*Affichage des données en HTML */
+    if(!movieId) return <p>Error, page not found !</p>
     return (
         <div className="detailsMovie">
+          { 
             <ul>
-                {movieId.map((props)=> (
+                  <li>
+                    <div className="cardDetailsMovies">
+                      <h1>{movieId.title}</h1> 
+                      <h2>{movieId.release_date}</h2>
+                      <h3>{movieId.categories}</h3>
+                      <p>{movieId.description}</p>
+                      <img src={movieId.poster} alt="img du film"/>
+                     </div> 
+                      
+                      <div>
+                        {movieId && movieId.actors.map(({name, character, photo}, index) => (
+                          <li key={index}>
+                            <p>{name}</p>
+                            <img src={photo} alt="img de l'acteur"/>
+                            <p>{character}</p>
+                          </li>
+                        ))}
+                      </div>
 
-                  <li key={props.id}>
-                      <h1>{props.title}</h1>
-                      <h2>{props.release_date}</h2>
-                      <h3>{props.categories}</h3>
-                      <p>{props.description}</p>
-                      <img src={props.poster} alt="img du film"/>
-                      <img src={props.backdrop} alt="img arrière plan du film"/>
-                        <li>
-                            <p>{props.actors.name}</p>
-                            <img src={props.actors.photo} alt="img de l'acteur"/>
-                            <p>{props.actors.character}</p>
+                      <div>
+                        {movieId && movieId.similar_movies.map(({title, poster, release_date}, index )=> ( 
+                        <li key={index}>
+                            <p>{title}</p>
+                            <img src={poster} alt="img du film"/>
+                            <p>{release_date}</p>
                         </li>
-                        <li>
-                            <p>{props.similar_movies.title}</p>
-                            <img src={props.similar_movies.poster} alt="img du film"/>
-                            <p>{props.similar_movies.release_date}</p>
-                        </li>
-                     
+                        ))}
+                      </div>  
                   </li>
 
-                ))}
-            </ul>   
+            </ul>  
+            }
         </div>
     );
 };
