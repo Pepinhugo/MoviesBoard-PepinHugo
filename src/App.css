@@ -18,9 +18,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 /*----------------------------------------*/
 
 /*----------------------------------------*/
@@ -38,7 +35,6 @@ li{
   list-style: none;
   display: inline-block; 
   width:50%;
-  border: solid white;
   box-shadow: 10px 5px 5px black;
   border-radius: 20px;
 }
@@ -49,6 +45,16 @@ button {
   margin-right: 0.5em;
 }
 /*----------------------------------------*/
+
+.cardDetailsMovies{
+  background-image: url("./backdrop.jpg");
+  background-color:rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
 
 /*----------------------------------------*/
 /*CSS de la Navbar (barre de menu) de l'application*/
