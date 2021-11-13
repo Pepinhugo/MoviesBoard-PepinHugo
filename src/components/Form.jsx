@@ -8,7 +8,7 @@ const Form = props => {
 
     const [nouveauMovie, setNouveauMovie] = useState("");
 
-    /*Fonction qui permet de récupérer les éléments qui ont été écrits dans le champ input du formulaire*/ 
+    /*Fonction qui permet de récupérer les éléments qui ont été écrit dans le champ input du formulaire*/ 
     const handleFormChange = (event) =>{
         setNouveauMovie(event.currentTarget.value);
     };
@@ -30,7 +30,7 @@ const Form = props => {
         
         /*Ce que retourne la Fonction du formulaire en HTML*/
         <form onSubmit={handleSubmit} className="formHome">
-            <input value={nouveauMovie} onChange={handleFormChange} type="text" placeholder="Ajouter un film"/>
+            <input value={nouveauMovie} onChange={handleFormChange} type="text" placeholder="Rechercher un film"/>
                 <select>
                     <option value="title">Titre du film</option>
                     <option value="datetime">Date de sortie</option>
