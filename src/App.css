@@ -46,6 +46,8 @@ button {
 }
 /*----------------------------------------*/
 
+/*----------------------------------------*/
+/*Backdrop de la Card*/
 .cardDetailsMovies{
   background-image: url("./backdrop.jpg");
   background-size: cover;
@@ -53,7 +55,7 @@ button {
   background-repeat: no-repeat;
   
 }
-
+/*----------------------------------------*/
 
 /*----------------------------------------*/
 /*CSS de la Navbar (barre de menu) de l'application*/
