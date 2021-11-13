@@ -48,7 +48,6 @@ button {
 
 .cardDetailsMovies{
   background-image: url("./backdrop.jpg");
-  background-color:rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
