@@ -8,8 +8,7 @@ class Movie extends Component{
     render(){
 
         const {details, onDelete}= this.props;
-
-       return <button onClick={() => onDelete(details.id)}>❌Supprimer</button>
+            return <button onClick={() => onDelete(details.id)}>❌Supprimer</button>
     }
 
 }

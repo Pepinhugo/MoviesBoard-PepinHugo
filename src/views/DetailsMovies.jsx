@@ -16,60 +16,60 @@ const DetailsMovies = () => {
     const { id } = useParams();
 
     useEffect(() => { 
-    const movieRes = () => {
-    axios
-      .get(
-        `http://localhost:3000/movies/${id}`
-      )
-      .then((listData) => {
+      const movieRes = () => {
+        axios
+          .get(`http://localhost:3000/movies/${id}`)
+          .then((listData) => {
 
-        setMovies(listData.data);
+            setMovies(listData.data);
 
-      });
+        });
     };
     movieRes();
     }, [id]); 
-    console.log(id);
 
     /*Affichage des données en HTML */
     if(!movieId) return <p>Error, page not found !</p>
+
     return (
-        <div className="detailsMovie">
-          { 
-            <ul>
-                  <li>
-                    <div className="cardDetailsMovies">
-                      <h1>{movieId.title}</h1> 
-                      <h2>{movieId.release_date}</h2>
-                      <h3>{movieId.categories}</h3>
-                      <p>{movieId.description}</p>
-                      <img src={movieId.poster} alt="img du film"/>
-                     </div> 
-                      
-                      <div>
-                        {movieId && movieId.actors.map(({name, character, photo}, index) => (
-                          <li key={index}>
-                            <p>{name}</p>
-                            <img src={photo} alt="img de l'acteur"/>
-                            <p>{character}</p>
-                          </li>
-                        ))}
-                      </div>
 
-                      <div>
-                        {movieId && movieId.similar_movies.map(({title, poster, release_date}, index )=> ( 
-                        <li key={index}>
-                            <p>{title}</p>
-                            <img src={poster} alt="img du film"/>
-                            <p>{release_date}</p>
-                        </li>
-                        ))}
-                      </div>  
-                  </li>
+      <div className="detailsMovie">
+        <ul>
+          <div className="bigCard">
+            <div className="cardDetailsMovies">
+              <h1>{movieId.title}</h1> 
+              <h2>{movieId.release_date}</h2>
+              <h3>{movieId.categories}</h3>
+              <p>{movieId.description}</p>
+              <img src={movieId.poster} alt="img du film"/>
+            </div> 
 
-            </ul>  
-            }
-        </div>
+            <div>
+              {movieId && movieId.actors.map(({name, character, photo}, index) => (
+
+                <li key={index}>
+                  <p>{name}</p>
+                  <img src={photo} alt="img de l'acteur"/>
+                  <p>{character}</p>
+                </li>
+
+              ))}
+            </div>
+
+            <div>
+              {movieId && movieId.similar_movies.map(({title, poster, release_date}, index )=> ( 
+
+                <li key={index}>
+                  <p>{title}</p>
+                  <img src={poster} alt="img du film"/>
+                  <p>{release_date}</p>
+                </li>
+
+              ))}
+            </div>  
+          </div>
+        </ul>  
+      </div>
     );
 };
 

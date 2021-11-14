@@ -21,12 +21,9 @@ const Home = () => {
   /*Récupération des datas d'un film avec axios dans la base de données et affichage de ces données */
     useEffect(() => {
     axios
-      .get(
-        "http://localhost:3000/movies"
-      )
+      .get("http://localhost:3000/movies")
       .then((list) => {
         setMovies(list.data);
-        console.log(list.data);
 
       });
     }, []); 
@@ -42,46 +39,41 @@ const Home = () => {
       const index = newMovies.findIndex((movie) => {
 
         return movie.id === id;  
+
       });
    
-      newMovies.splice(index, 1);
-      setMovies(newMovies);
+        newMovies.splice(index, 1);
+        setMovies(newMovies);
      };
  
   
 
     /*Ce que retourne la fonction en HTML */
     return (
-        <div className="Card">
+      <div className="Card">
 
-          <Form/>
+        <Form/>
 
-           <ul>
-                {movies.map((movie)=> (
+          <ul>
+            {movies.map((movie)=> (
 
-                  <li key={movie.id}>
+              <li key={movie.id}>
 
-                      <h1>{movie.title}</h1>
+                <h1>{movie.title}</h1>
+                <br/>
+                <Link exact to ={"DetailsMovies/"+ movie.id}><img src={movie.poster} alt="img du film"/></Link> 
+                <br/>
+                <h2>{movie.release_date}</h2>
+                <p>{movie.description}</p>
+                <Link exact to ="ChangeMovies"><button>🖊 Modifier</button></Link>
 
-                      <br/>
-
-                      <Link exact to ={"DetailsMovies/"+ movie.id}><img src={movie.poster} alt="img du film"/></Link> 
-
-                      <br/>
-
-                      <h2>{movie.release_date}</h2>
-
-                      <p>{movie.description}</p>
-
-                      <Link exact to ="ChangeMovies"><button>🖊 Modifier</button></Link>
-
-                            {movies.map((movie)=> {
-                              return <Movie details = {movie} onDelete={handleDelete}/>
-                            })}
-                  </li>
-                ))}
-            </ul>
-        </div>
+                  {movies.map((movie)=> {
+                    return <Movie details = {movie} onDelete={handleDelete}/>
+                  })}
+              </li>
+            ))}
+        </ul>
+      </div>
     );
 };
 

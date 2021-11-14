@@ -47,6 +47,18 @@ button {
 /*----------------------------------------*/
 
 /*----------------------------------------*/
+/*Div qui englobe les Cards*/
+.bigCard{
+  display: inline-block; 
+  width:50%;
+  background-color: #282c34;
+  opacity: 0.93;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 20px;
+}
+/*----------------------------------------*/
+
+/*----------------------------------------*/
 /*Backdrop de la Card*/
 .cardDetailsMovies{
   background-image: url("./backdrop.jpg");
@@ -99,6 +111,19 @@ button {
  margin-left: 10px;
  border-radius: 20px;
 
+}
+/*----------------------------------------*/
+
+
+/*----------------------------------------*/
+/*Formulaires de la page AddMovies*/
+.formsAddMovies{
+  background-color: #282c34;
+  box-shadow: 10px 5px 5px black;
+  opacity: 0.93;
+  border-radius: 50px;
+  width:35%;
+  text-align: center;
 }
 /*----------------------------------------*/
 

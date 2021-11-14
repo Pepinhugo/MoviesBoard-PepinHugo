@@ -31,7 +31,7 @@ function App() {
       <Navbar/>
     
       <Route path='/' exact ><Home/></Route>
-      <Route path='/DetailsMovies'><DetailsMovies/></Route>
+      <Route path='/DetailsMovies/:id'><DetailsMovies/></Route>
       <Route path='/ChangeMovies'><NewsMovies/></Route>
       <Route path='/AddMovies'><AddMovies/></Route>
 
