@@ -66,7 +66,7 @@ const DetailsMovies = () => {
                 </li>
 
               ))}
-            </div>  
+            </div> 
           </div>
         </ul>  
       </div>

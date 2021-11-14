@@ -117,7 +117,7 @@ button {
 
 /*----------------------------------------*/
 /*Formulaires de la page AddMovies*/
-.formsAddMovies{
+.formsAddMovies, .formsChangeMovies{
   background-color: #282c34;
   box-shadow: 10px 5px 5px black;
   opacity: 0.93;
