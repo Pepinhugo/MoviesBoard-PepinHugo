@@ -144,3 +144,16 @@ button {
   border-radius: 10px;
 }
 /*----------------------------------------*/
+
+/*----------------------------------------*/
+/*Bouton haut de page*/
+#magicbtn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #282c34;
+  box-shadow: 10px 5px 5px black;
+  color: white;
+  font-size: bold;
+  
+}
+/*----------------------------------------*/

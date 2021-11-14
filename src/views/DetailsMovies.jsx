@@ -33,7 +33,7 @@ const DetailsMovies = () => {
 
     return (
 
-      <div className="detailsMovie">
+      <div className="detailsMovie" id="btnUpPage">
         <ul>
           <div className="bigCard">
             <div className="cardDetailsMovies">
@@ -68,7 +68,9 @@ const DetailsMovies = () => {
               ))}
             </div> 
           </div>
-        </ul>  
+        </ul> 
+        {/*Bouton de retourn en haut de page*/}
+        <a href="#btnUpPage"><button id="magicbtn"> 🔝 Haut de la page</button></a>
       </div>
     );
 };
