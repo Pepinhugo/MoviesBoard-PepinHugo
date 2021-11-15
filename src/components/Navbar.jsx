@@ -11,7 +11,7 @@ const Navbar = () => {
     
         <div className="navigation">
             <NavLink exact to ="/" activeStyle={{color: 'gray'}}>Accueil</NavLink>
-            <NavLink exact to ="AddMovies" activeStyle={{color: 'gray'}}>Ajouter un film</NavLink>
+            <NavLink exact to ="/AddMovies" activeStyle={{color: 'gray'}}>Ajouter un film</NavLink>
         </div>
             
     
